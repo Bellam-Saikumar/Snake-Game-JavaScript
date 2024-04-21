@@ -27,6 +27,7 @@ let snake=[
 window.addEventListener("keydown",changeDirection);
 resetBtn.addEventListener("click",resetGame);
 
+
 gameStart();
 
 function gameStart(){
@@ -91,6 +92,7 @@ function drawSnake(){
         ctx.strokeRect(snakePart.x, snakePart.y, unitSize,unitSize);
     })
 };
+
 function changeDirection(direction) {
     const LEFT = 37;
     const RIGHT = 39;
@@ -103,28 +105,25 @@ function changeDirection(direction) {
     const goingLeft = (xVelocity == -unitSize);
 
     switch (direction) {
-        case 'left':
+        case "left":
             if (!goingRight) {
                 xVelocity = -unitSize;
                 yVelocity = 0;
             }
             break;
-
-        case 'right':
+        case "right":
             if (!goingLeft) {
                 xVelocity = unitSize;
                 yVelocity = 0;
             }
             break;
-
-        case 'up':
+        case "up":
             if (!goingDown) {
                 xVelocity = 0;
                 yVelocity = -unitSize;
             }
             break;
-
-        case 'down':
+        case "down":
             if (!goingUp) {
                 xVelocity = 0;
                 yVelocity = unitSize;
